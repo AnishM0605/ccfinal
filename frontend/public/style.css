@@ -1,0 +1,197 @@
+:root {
+--bg: #020617;
+--panel: rgba(15, 23, 42, 0.7);
+--border: rgba(255,255,255,0.08);
+
+--primary: #00daf3;
+--secondary: #4ade80;
+--danger: #fb7185;
+
+--text: #e2e8f0;
+--muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+font-family: 'Inter', sans-serif;
+background: radial-gradient(circle at 20% 20%, #0b1c34, #020617 70%);
+color: var(--text);
+height: 100vh;
+display: flex;
+overflow: hidden;
+}
+
+.app-container {
+display: flex;
+width: 100%;
+}
+
+/* LEFT PANEL */
+.inspector-panel {
+width: 320px;
+padding: 2rem 1.5rem;
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+
+background: var(--panel);
+backdrop-filter: blur(12px);
+
+border-right: 1px solid var(--border);
+}
+
+/* HEADER */
+.panel-header h1 {
+font-size: 1.3rem;
+}
+
+.subtext {
+font-size: 0.75rem;
+color: var(--muted);
+}
+
+/* PANELS */
+.panel {
+background: rgba(255,255,255,0.03);
+border-radius: 12px;
+padding: 1rem;
+border: 1px solid var(--border);
+transition: 0.2s;
+}
+
+.panel:hover {
+transform: translateY(-2px);
+box-shadow: 0 0 25px rgba(0,218,243,0.08);
+}
+
+h2 {
+font-size: 0.75rem;
+text-transform: uppercase;
+margin-bottom: 0.75rem;
+color: var(--muted);
+}
+
+/* STATUS */
+.status-indicator {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.pulse-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: var(--secondary);
+animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); opacity: 1; }
+50% { transform: scale(1.5); opacity: 0.5; }
+100% { transform: scale(1); opacity: 1; }
+}
+
+/* LOGS */
+.log-line {
+font-size: 0.75rem;
+margin-bottom: 0.3rem;
+}
+
+.log-line strong {
+color: var(--primary);
+}
+
+/* CONTROLS */
+.tool-group {
+display: flex;
+justify-content: space-between;
+margin-bottom: 1rem;
+}
+
+input[type="color"] {
+border: none;
+height: 28px;
+cursor: pointer;
+}
+
+input[type="range"] {
+accent-color: var(--primary);
+}
+
+/* BUTTONS */
+.btn-primary {
+width: 100%;
+padding: 0.7rem;
+border: none;
+border-radius: 8px;
+background: linear-gradient(135deg, var(--primary), #009fb2);
+font-weight: 600;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.btn-primary:hover {
+box-shadow: 0 0 20px rgba(0,218,243,0.5);
+}
+
+.btn-toggle {
+padding: 4px 10px;
+border-radius: 6px;
+border: 1px solid var(--primary);
+background: transparent;
+color: var(--primary);
+cursor: pointer;
+}
+
+.btn-toggle.active {
+background: var(--primary);
+color: black;
+}
+
+/* CANVAS */
+.canvas-expanse {
+flex: 1;
+margin: 1rem;
+border-radius: 16px;
+overflow: hidden;
+
+background: radial-gradient(circle at center, #01030a, #020617);
+box-shadow:
+0 0 60px rgba(0,218,243,0.08),
+inset 0 0 40px rgba(0,218,243,0.05);
+
+display: flex;
+flex-direction: column;
+}
+
+/* CANVAS HEADER */
+.canvas-header {
+display: flex;
+justify-content: space-between;
+padding: 10px 15px;
+font-size: 0.75rem;
+border-bottom: 1px solid var(--border);
+color: var(--muted);
+}
+
+/* NODE BADGE */
+.node-badge {
+padding: 3px 8px;
+border-radius: 999px;
+font-size: 0.7rem;
+background: rgba(0,218,243,0.2);
+color: var(--primary);
+}
+
+/* CANVAS */
+#drawing-canvas {
+width: 100%;
+height: 100%;
+cursor: crosshair;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniraft-Board</title>
+
+```
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+    <div class="app-container">
+
+```
+    <!-- LEFT PANEL -->
+    <aside class="inspector-panel">
+
+        <header class="panel-header">
+            <h1 class="font-display primary-gradient-text">Drawing Board</h1>
+            <p class="subtext">Distributed Canvas • RAFT Active</p>
+        </header>
+
+        <!-- CLUSTER STATUS -->
+        <section class="system-status panel">
+            <h2>Cluster Health</h2>
+            <div class="status-indicator">
+                <span class="pulse-dot" id="conn-state-pulse"></span>
+                <span id="conn-status" class="font-mono">Connecting...</span>
+            </div>
+        </section>
+
+        <!-- NODE INFO -->
+        <section class="system-logs panel">
+            <h2>Node Info</h2>
+            <div class="log-line">Leader: <strong id="leader-id">Discovery...</strong></div>
+            <div class="log-line">Replicas: <strong id="cluster-status">Polling...</strong></div>
+        </section>
+
+        <!-- CONTROLS -->
+        <section class="controls panel">
+            <h2>Tool Config</h2>
+
+            <div class="tool-group">
+                <label>Mode</label>
+                <button id="eraser-btn" class="btn-toggle">Use Eraser</button>
+            </div>
+
+            <div class="tool-group">
+                <label>Color</label>
+                <input type="color" id="color-picker" value="#00daf3">
+            </div>
+
+            <div class="tool-group">
+                <label>Thickness</label>
+                <input type="range" id="width-picker" min="1" max="20" value="3">
+            </div>
+
+            <button id="clear-btn" class="btn-primary">Clear Local</button>
+        </section>
+
+    </aside>
+
+    <!-- MAIN CANVAS -->
+    <main class="canvas-expanse">
+        <div class="canvas-header">
+            <span>Live Drawing Surface</span>
+            <span class="node-badge" id="node-role">Replica</span>
+        </div>
+        <canvas id="drawing-canvas"></canvas>
+    </main>
+
+</div>
+
+<script type="module" src="/dist/frontend/src/app.js" defer></script>
+```
+
+</body>
+</html>
