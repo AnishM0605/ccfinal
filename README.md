@@ -1,6 +1,6 @@
 # Mini-RAFT Drawing Board
 
-Starter codebase for the distributed real-time drawing board assignment.
+Starter codebase for the distributed real-time drawing board assignment
 
 ## What is already done
 
